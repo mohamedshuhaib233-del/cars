@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>360° VEHICLE INSPECTION STUDIO // Scuderia Veloce Atelier</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="viewer-body">
+
+  <!-- Sound Notification Toast -->
+  <div id="sound-toast" class="sound-toast">
+    <span>🔊 Sound active: Turntable servo & mechanical audio enabled</span>
+  </div>
+
+  <!-- Top Navigation & Vehicle Header -->
+  <header class="viewer-top-nav">
+    <div class="nav-left">
+      <a href="services.html" class="back-link" title="Return to Accessories Atelier">
+        <span class="back-arrow">←</span>
+        <span class="back-text">BACK TO SERVICES ATELIER</span>
+      </a>
+    </div>
+
+    <div class="nav-center-vehicle">
+      <div class="vehicle-marque-row">
+        <span id="car-brand-badge" class="modal-brand-badge ferrari-badge">FERRARI GENUINE</span>
+        <span id="fitted-category-badge" class="fitted-type-badge">FITTED ALLOY WHEEL</span>
+      </div>
+      <h1 id="car-title" class="viewer-car-title">FERRARI SF90 STRADALE</h1>
+      <div id="car-subtitle" class="viewer-car-subtitle">Assetto Fiorano // 1000 CV V8 Hybrid — Mounted Inspection</div>
+    </div>
+
+    <div class="nav-right">
+      <button id="viewer-sound-btn" class="nav-btn sound-toggle" title="Toggle audio feedback">
+        <span class="sound-icon">🔈</span>
+        <span class="sound-label">AUDIO FX</span>
+      </button>
+      <button id="viewer-video-btn" class="nav-btn highlight-btn" style="display: none; background: rgba(224, 0, 0, 0.85); border-color: #ff3333;" title="Watch authentic 4K on-track video">
+        <span>🎬 4K VIDEO</span>
+      </button>
+      <button id="viewer-inquire-btn" class="nav-btn highlight-btn">
+        <span>BOOK FITMENT</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main 360 Studio Turntable Stage -->
+  <main class="viewer-stage-container" id="viewer-stage">
+    
+    <!-- Ambient Studio Lighting & Grid Effects -->
+    <div class="studio-ceiling-light"></div>
+    <div class="studio-reflection-plane"></div>
+    <div class="studio-vignette-overlay"></div>
+
+    <!-- Superbike Mode Switcher (Active when viewing Superbikes) -->
+    <div class="viewer-mode-switcher-bar" id="viewer-mode-switcher" style="display: none;">
+      <button class="mode-switch-btn active" id="mode-btn-video">
+        <span>🎬 4K ON-TRACK VIDEO</span>
+      </button>
+      <button class="mode-switch-btn" id="mode-btn-360">
+        <span>🔄 360° TURNTABLE STUDIO</span>
+      </button>
+    </div>
+
+    <!-- Dedicated Superbike Video Theater Layer -->
+    <div class="superbike-viewer-video-container" id="viewer-bike-video-stage" style="display: none;">
+      <video id="viewer-stage-video" class="viewer-stage-video" loop muted playsinline controls preload="auto">
+        <source id="viewer-stage-video-source" src="" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Canvas Renderer -->
+    <canvas id="studio-360-canvas"></canvas>
+
+    <!-- Turntable Floor Ring (Visual Indicator of Rotation) -->
+    <div class="turntable-floor-ring" id="turntable-ring">
+      <div class="ring-tick tick-0"><span>0° FRONT</span></div>
+      <div class="ring-tick tick-90"><span>90° PROFILE</span></div>
+      <div class="ring-tick tick-180"><span>180° REAR</span></div>
+      <div class="ring-tick tick-270"><span>270° PROFILE</span></div>
+      <div class="turntable-pointer" id="turntable-pointer"></div>
+    </div>
+
+    <!-- Pinned Interactive Hotspot -->
+    <div class="hotspot-pin-wrapper" id="hotspot-wrapper">
+      <div class="hotspot-pin" id="hotspot-pin" title="Click to inspect fitted component">
+        <span class="radar-wave"></span>
+        <span class="radar-wave wave-delayed"></span>
+        <span class="hotspot-dot"></span>
+        <span class="hotspot-label-pill" id="hotspot-label">FORGED ALLOY WHEEL</span>
+      </div>
+
+      <!-- Expandable Engineering Callout HUD -->
+      <div class="hotspot-popup-card" id="hotspot-popup">
+        <div class="popup-header">
+          <span class="popup-kicker">FITTED COMPONENT TELEMETRY</span>
+          <h3 id="popup-title" class="popup-title">Ferrari SF90 20" Forged Diamond-Cut</h3>
+          <span id="popup-part-no" class="popup-part-no">OEM #342891-CORSA</span>
+        </div>
+        <div class="popup-specs-grid" id="popup-specs-grid">
+          <!-- Populated by viewer.js -->
+        </div>
+        <div class="popup-footer">
+          <span class="popup-verified-tag">✓ VERIFIED OEM COMPATIBILITY</span>
+          <button class="popup-action-btn" id="popup-view-spec-btn">FULL SPECS →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drag Rotation User Prompt Overlay -->
+    <div class="drag-hint-overlay" id="drag-hint">
+      <div class="drag-icon-anim">
+        <span class="drag-arrow left">‹</span>
+        <span class="drag-hand">🔄</span>
+        <span class="drag-arrow right">›</span>
+      </div>
+      <span class="drag-hint-text">360° SHOWROOM TURNTABLE // AUTOROTATING</span>
+      <span class="drag-hint-sub">DRAG OR SWIPE ANYTIME TO PAUSE & INSPECT SPECIFIC ANGLE</span>
+    </div>
+
+    <!-- Loading Sequence HUD -->
+    <div class="viewer-loader-hud" id="viewer-loader">
+      <div class="loader-spinner"></div>
+      <div class="loader-text-group">
+        <span class="loader-title">CALIBRATING 360° STUDIO TURNTABLE</span>
+        <span class="loader-progress-val" id="loader-progress">SYNCHRONIZING FRAMES (0%)</span>
+      </div>
+    </div>
+
+    <!-- Studio Telemetry HUD (Top-Left) -->
+    <div class="studio-telemetry-hud">
+      <div class="telemetry-box-header">
+        <span class="hud-pulse-dot"></span>
+        <span class="hud-box-title">TURNTABLE TELEMETRY</span>
+      </div>
+      <div class="telemetry-stat-row">
+        <span class="stat-name">ROTATION ANGLE</span>
+        <span class="stat-value highlight-num" id="telemetry-angle">000°</span>
+      </div>
+      <div class="telemetry-stat-row">
+        <span class="stat-name">CAMERA ZOOM</span>
+        <span class="stat-value" id="telemetry-zoom">1.0X</span>
+      </div>
+      <div class="telemetry-stat-row">
+        <span class="stat-name">TURNTABLE MODE</span>
+        <span class="stat-value highlight-num" id="telemetry-mode">AUTO-ROTATE 360°</span>
+      </div>
+      <div class="telemetry-stat-row">
+        <span class="stat-name">STUDIO CALIBRATION</span>
+        <span class="stat-value green-status">ACTIVE // 60 FPS</span>
+      </div>
+    </div>
+
+    <!-- Live Fitted Wheel / Component Macro Inspection Lens (Top-Right) -->
+    <div class="wheel-macro-lens-hud" id="wheel-macro-lens">
+      <div class="lens-header">
+        <span class="lens-dot"></span>
+        <span class="lens-kicker">FITTED COMPONENT 8K LENS</span>
+      </div>
+      <div class="lens-circle-stage">
+        <img src="" id="lens-macro-img" class="lens-macro-img" alt="Fitted Wheel Lens">
+        <div class="lens-crosshair"></div>
+        <div class="lens-glare"></div>
+      </div>
+      <div class="lens-info-bar">
+        <span id="lens-wheel-title" class="lens-wheel-title">Ferrari 20" Forged Diamond-Cut</span>
+        <span id="lens-finish-tag" class="lens-finish-tag">COAT: Liquid Titanium Silver</span>
+      </div>
+    </div>
+
+    <!-- In-Studio Finish Switcher (Bottom-Left, For Wheels) -->
+    <div class="studio-finish-palette" id="studio-finish-palette">
+      <div class="palette-header">
+        <span class="palette-kicker">ALLOY FINISH COAT</span>
+        <span class="palette-active-name" id="palette-finish-name">Liquid Titanium Silver</span>
+      </div>
+      <div class="finish-dots-row">
+        <button class="finish-choice-dot dot-silver active" data-finish="silver" data-name="Liquid Titanium Silver" title="Liquid Titanium Silver"></button>
+        <button class="finish-choice-dot dot-gold" data-finish="gold" data-name="24K Champagne Gold" title="24K Champagne Gold"></button>
+        <button class="finish-choice-dot dot-rose-gold" data-finish="rose-gold" data-name="Bespoke Copper Rose Gold" title="Bespoke Copper Rose Gold"></button>
+        <button class="finish-choice-dot dot-black" data-finish="black" data-name="Obsidian Satin Black" title="Obsidian Satin Black"></button>
+        <button class="finish-choice-dot dot-chrome" data-finish="chrome" data-name="Mirror Polished Chrome" title="Mirror Polished Chrome"></button>
+      </div>
+    </div>
+
+    <!-- Fitted Component Summary Card (Bottom-Right) -->
+    <div class="fitted-card-drawer" id="fitted-card-drawer">
+      <div class="fitted-thumb-wrap">
+        <img src="" id="fitted-thumb-img" class="fitted-thumb-img" alt="Component Thumbnail">
+      </div>
+      <div class="fitted-details-wrap">
+        <span class="fitted-kicker" id="fitted-item-kicker">AUTHENTIC FITTED ITEM</span>
+        <h4 class="fitted-card-title" id="fitted-card-title">Ferrari SF90 20" Diamond-Cut</h4>
+        <div class="fitted-specs-mini" id="fitted-specs-mini">
+          <!-- Populated by JS -->
+        </div>
+        <button class="fitted-quote-btn" id="fitted-quote-btn">
+          <span>REQUEST FITMENT QUOTE</span>
+          <span class="arrow-ico">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Central Control Toolbar (Bottom Center) -->
+    <div class="studio-controls-bar">
+      <!-- 360 Degree Dial Scrubber -->
+      <div class="angle-scrubber-wrap">
+        <span class="scrub-label">0°</span>
+        <input type="range" id="angle-slider" class="angle-slider" min="0" max="360" value="0" step="1">
+        <span class="scrub-label">360°</span>
+      </div>
+
+      <div class="controls-btn-group">
+        <button id="btn-reset-angle" class="studio-btn" title="Reset angle to default inspection view">
+          <span class="btn-icon">⟲</span>
+          <span class="btn-text">RESET VIEW</span>
+        </button>
+
+        <button id="btn-autospin" class="studio-btn" title="Toggle continuous 360 auto turntable spin">
+          <span class="btn-icon" id="autospin-icon">▶</span>
+          <span class="btn-text" id="autospin-text">AUTO-ROTATE 360°</span>
+        </button>
+
+        <button id="btn-zoom" class="studio-btn" title="Toggle close-up fitment zoom">
+          <span class="btn-icon">🔍</span>
+          <span class="btn-text" id="zoom-text">ZOOM FITMENT</span>
+        </button>
+
+        <button id="btn-hotspot-toggle" class="studio-btn active" title="Toggle technical spec hotspots">
+          <span class="btn-icon">📍</span>
+          <span class="btn-text">HOTSPOTS</span>
+        </button>
+
+        <button id="btn-switch-tray" class="studio-btn" title="Compare other accessories on this car">
+          <span class="btn-icon">⚡</span>
+          <span class="btn-text">SWITCH ACCESSORY</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Switcher Bottom Tray (Collapsible) -->
+    <div class="quick-switcher-tray" id="quick-switcher-tray">
+      <div class="tray-header">
+        <div class="tray-title-group">
+          <span class="tray-kicker">SUPERCAR ATELIER CATALOG</span>
+          <h4 class="tray-title">INSPECT OTHER ACCESSORIES ON THIS VEHICLE</h4>
+        </div>
+        <button id="close-tray-btn" class="tray-close-btn" title="Close Tray">✕</button>
+      </div>
+      <div class="tray-items-carousel" id="tray-items-carousel">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Fullscreen Modal for Technical Spec Sheet -->
+  <div id="full-spec-modal" class="modal-backdrop">
+    <div class="modal-dialog-box">
+      <button class="modal-close-btn" id="close-spec-modal-btn">✕</button>
+      <div class="modal-content-split">
+        <div class="modal-visual-col">
+          <div class="modal-graphic-wrap real-modal-stage">
+            <img src="" id="spec-modal-img" class="modal-real-img" alt="Component Spec View">
+          </div>
+        </div>
+        <div class="modal-info-col">
+          <span class="modal-kicker" id="spec-modal-kicker">FACTORY OEM DATA SHEET</span>
+          <h2 class="modal-title" id="spec-modal-title">Item Title</h2>
+          <p class="modal-desc" id="spec-modal-desc">Description</p>
+          <div class="modal-specs-section">
+            <h4 class="specs-section-title">ENGINEERING SPECIFICATIONS</h4>
+            <div class="modal-specs-table" id="spec-modal-table"></div>
+          </div>
+          <div class="modal-fitment-section">
+            <h4 class="specs-section-title">CERTIFIED COMPATIBLE MODELS</h4>
+            <div class="fitment-tags-list" id="spec-modal-fitment"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Superbike 4K Cinematic Video Lightbox Modal -->
+  <div id="superbike-cinema-modal" class="superbike-cinema-modal">
+    <div class="cinema-backdrop" id="cinema-backdrop"></div>
+    <div class="cinema-theater-box">
+      <div class="cinema-header">
+        <div class="cinema-header-left">
+          <span class="cinema-brand-badge" id="cinema-badge">DUCATI CORSE</span>
+          <h3 class="cinema-title" id="cinema-title">Ducati Panigale V4 — On-Track 4K Performance</h3>
+        </div>
+        <button class="cinema-close-btn" id="cinema-close-btn" title="Close Cinema">✕</button>
+      </div>
+
+      <div class="cinema-video-stage">
+        <video id="cinema-video-player" controls muted playsinline preload="auto">
+          <source id="cinema-video-source" src="" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <div class="cinema-footer">
+        <div class="cinema-specs-row">
+          <div class="cinema-spec-item">
+            <span class="cinema-spec-label">EXHAUST SPEC</span>
+            <span class="cinema-spec-val" id="cinema-exhaust-spec">Dual Slash-Cut // Full Titanium</span>
+          </div>
+          <div class="cinema-spec-item">
+            <span class="cinema-spec-label">POWER GAIN</span>
+            <span class="cinema-spec-val" id="cinema-power-spec">+12.5 HP</span>
+          </div>
+          <div class="cinema-spec-item">
+            <span class="cinema-spec-label">WEIGHT SAVING</span>
+            <span class="cinema-spec-val" id="cinema-weight-spec">-6.2 KG</span>
+          </div>
+        </div>
+
+        <div class="cinema-action-buttons">
+          <a class="cinema-inquire-btn" id="cinema-whatsapp-btn" href="https://wa.me/918086648642?text=Hello%20Scuderia%20Veloce%2C%20I%20am%20interested%20in%20the%20Ducati%20Panigale%20racing%20exhaust" target="_blank" rel="noopener noreferrer">
+            <span>💬 INQUIRE ON WHATSAPP</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="viewer.js"></script>
+
+  <!-- Floating WhatsApp VIP Concierge Button (Direct Message to 8086648642) -->
+  <a href="https://wa.me/918086648642?text=Hello%20Scuderia%20Veloce%2C%20I%20would%20like%20to%20inquire%20about%20supercar%20accessories%20and%20fitment." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="whatsapp-float-btn" 
+     id="whatsapp-float-btn"
+     title="Direct WhatsApp Message to VIP Concierge (8086648642)">
+    <div class="wa-icon-wrap">
+      <span class="wa-radar-wave"></span>
+      <svg class="wa-svg" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12C2 13.89 2.525 15.66 3.441 17.18L2.062 21.438C1.984 21.678 2.048 21.942 2.228 22.122C2.366 22.26 2.556 22.333 2.75 22.333C2.84 22.333 2.931 22.318 3.018 22.287L7.425 20.732C8.868 21.545 10.404 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM17.204 15.398C16.992 15.998 16.147 16.516 15.504 16.657C15.064 16.753 14.494 16.827 12.56 16.026C10.086 15.002 8.49 12.49 8.366 12.327C8.247 12.164 7.368 10.997 7.368 9.787C7.368 8.577 7.986 7.985 8.233 7.733C8.441 7.521 8.784 7.425 9.112 7.425C9.219 7.425 9.317 7.43 9.406 7.435C9.664 7.447 9.794 7.463 9.965 7.873C10.178 8.388 10.697 9.658 10.761 9.789C10.825 9.92 10.889 10.095 10.803 10.268C10.722 10.446 10.648 10.526 10.519 10.676C10.39 10.826 10.266 10.941 10.137 11.101C10.019 11.238 9.885 11.385 10.035 11.642C10.185 11.894 10.704 12.742 11.47 13.424C12.457 14.303 13.262 14.584 13.551 14.704C13.771 14.795 14.034 14.774 14.195 14.602C14.4 14.382 14.657 14.018 14.925 13.643C15.118 13.375 15.359 13.337 15.616 13.434C15.879 13.525 17.279 14.217 17.568 14.362C17.858 14.506 18.051 14.576 18.121 14.694C18.185 14.812 18.185 15.348 17.204 15.398Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+    <div class="wa-tooltip-pill">
+      <span class="wa-status-dot"></span>
+      <span class="wa-text-label">CHAT ON WHATSAPP</span>
+      <span class="wa-number-badge">8086648642</span>
+    </div>
+  </a>
+
+</body>
+</html>

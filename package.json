@@ -4,8 +4,9 @@
   "description": "Luxury 3D automotive scroll-driven sequence animation featuring Ferrari SF90 Stradale & Ducati Panigale V4",
   "type": "module",
   "scripts": {
-    "dev": "node server.js",
-    "start": "node server.js"
+    "dev": "node local-server.js",
+    "start": "node local-server.js",
+    "build": "echo 'Static build ready'"
   },
   "keywords": [
     "scrolling-animation",
@@ -15,8 +16,5 @@
     "3d-video-herosection"
   ],
   "author": "Mohamed Shuhaib .k",
-  "license": "MIT",
-  "dependencies": {
-    "sharp": "^0.35.4"
-  }
+  "license": "MIT"
 }

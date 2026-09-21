@@ -21,3 +21,6 @@ npm-debug.log*
 
 # Scratch & test images
 test_*
+
+# Helper scripts
+push_git.cjs

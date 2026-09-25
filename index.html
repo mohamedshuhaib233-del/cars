@@ -26,8 +26,7 @@
           <path d="M16 22H24V32H16V22Z" fill="#ff2800" opacity="0.8"/>
         </svg>
       </div>
-      <div class="preloader-brand">SCUDERIA // VELOCE</div>
-      <div class="preloader-title">3D CINEMATIC EXPERIENCE</div>
+      <div class="preloader-brand">SCUDERIA VELOCE</div>
       
       <div class="progress-bar-wrap">
         <div id="progress-bar-fill" class="progress-bar-fill"></div>
@@ -35,14 +34,9 @@
       
       <div class="preloader-stats">
         <span id="load-percent" class="load-percent">0%</span>
-        <span id="load-status" class="load-status">INITIALIZING TELEMETRY...</span>
+        <span id="load-status" class="load-status" style="display: none;"></span>
       </div>
     </div>
-  </div>
-
-  <!-- Ambient Sound Notification -->
-  <div id="sound-toast" class="sound-toast">
-    <span>🔊 Sound active: Scroll velocity modulates dynamic engine acoustics</span>
   </div>
 
   <!-- Navigation Bar -->
@@ -56,24 +50,24 @@
     </div>
 
     <nav class="nav-chapters">
-      <button class="chapter-pill active" data-target="0.12">01 // ALLOY WHEEL</button>
-      <button class="chapter-pill" data-target="0.35">02 // ACTIVE SPOILER</button>
-      <button class="chapter-pill" data-target="0.62">03 // BIKE EXHAUST</button>
+      <button class="chapter-pill active" data-target="0.12">01 // WHEELS</button>
+      <button class="chapter-pill" data-target="0.35">02 // SPOILER</button>
+      <button class="chapter-pill" data-target="0.62">03 // EXHAUST</button>
       <button class="chapter-pill" data-target="0.88">04 // DUAL ICONS</button>
     </nav>
 
     <div class="nav-actions">
-      <a href="viewer.html" class="nav-btn" style="border: 1px solid rgba(255,255,255,0.18);" title="360° Vehicle & Accessory Inspection Studio">
-        <span>360° STUDIO 🔄</span>
+      <a href="viewer.html" class="nav-btn" style="border: 1px solid rgba(255,255,255,0.18);" title="360° Studio">
+        <span>360° STUDIO</span>
       </a>
-      <a href="#services-atelier" class="nav-btn highlight-btn" title="Explore Supercar Accessories & Services in Continuity">
-        <span>SERVICES ATELIER ⚡</span>
+      <a href="#services-atelier" class="nav-btn highlight-btn" title="Explore Accessories">
+        <span>ATELIER</span>
       </a>
-      <button id="sound-btn" class="nav-btn sound-toggle" title="Toggle dynamic acoustic synthesizer">
+      <button id="sound-btn" class="nav-btn sound-toggle" title="Toggle Sound">
         <span class="sound-icon">🔈</span>
-        <span class="sound-label">SOUND FX</span>
+        <span class="sound-label">SOUND</span>
       </button>
-      <button id="autoplay-btn" class="nav-btn autoplay-toggle" title="Automated cinematic camera flythrough">
+      <button id="autoplay-btn" class="nav-btn autoplay-toggle" title="Automated camera tour">
         <span class="play-icon">▶</span>
         <span class="play-label">AUTOPLAY</span>
       </button>
@@ -132,53 +126,20 @@
       <div class="detail-tag-box left-align">
         <div class="tag-header">
           <span class="tag-pulse-dot"></span>
-          <span class="tag-code">DETAIL TAG // 01</span>
-          <span class="tag-category">WHEEL & BRAKES</span>
+          <span class="tag-code">01 // WHEELS</span>
         </div>
         
         <h2 class="tag-main-title">
-          FORGED ALLOY WHEEL
+          FORGED ALLOY
         </h2>
         <p class="tag-subtitle">
-          20" Diamond-Cut Forged Rims & Brembo Carbon Ceramics
+          20" Diamond-Cut · Carbon Ceramic
         </p>
 
-        <div class="detail-specs-list">
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">ALLOY SPEC</span>
-              <span class="spec-val">20" Lightweight Diamond-Cut Forged Rims</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">BRAKE ROTORS</span>
-              <span class="spec-val">398mm Carbon Ceramic (CCM) Discs</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">CALIPERS</span>
-              <span class="spec-val">Brembo Monobloc 6-Piston // Rosso Corsa</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">TIRE SETUP</span>
-              <span class="spec-val">Michelin Pilot Sport Cup 2 (255/35 ZR20)</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">CENTER CAP</span>
-              <span class="spec-val">Prancing Horse Giallo Modena Emblem</span>
-            </div>
-          </div>
+        <div class="minimal-spec-pills">
+          <span class="mini-pill">20" FORGED</span>
+          <span class="mini-pill">BREMBO CCM</span>
+          <span class="mini-pill">8.4 KG</span>
         </div>
       </div>
     </section>
@@ -188,53 +149,20 @@
       <div class="detail-tag-box left-align">
         <div class="tag-header">
           <span class="tag-pulse-dot"></span>
-          <span class="tag-code">DETAIL TAG // 02</span>
-          <span class="tag-category">ACTIVE AERODYNAMICS</span>
+          <span class="tag-code">02 // AERODYNAMICS</span>
         </div>
         
         <h2 class="tag-main-title">
-          ACTIVE REAR SPOILER
+          ACTIVE SPOILER
         </h2>
         <p class="tag-subtitle">
-          Patented Shut-Off Gurney Flap & Carbon Wing
+          Shut-Off Gurney Flap · Carbon Wing
         </p>
 
-        <div class="detail-specs-list">
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">DOWNFORCE CAPACITY</span>
-              <span class="spec-val">390 kg Downforce Generated @ 250 km/h</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">WING MATERIAL</span>
-              <span class="spec-val">High-Modulus Pre-Preg Autoclaved Carbon Fiber</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">AERO MODES</span>
-              <span class="spec-val">Low Drag (LD) ⇄ High Downforce (HD)</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">ACTUATION SPEED</span>
-              <span class="spec-val">Dynamic Electro-Actuated (&lt;200ms Shift)</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">INTEGRATION</span>
-              <span class="spec-val">Syncs with Side Diffuser Vortex Channels</span>
-            </div>
-          </div>
+        <div class="minimal-spec-pills">
+          <span class="mini-pill">390 KG DOWNFORCE</span>
+          <span class="mini-pill">PRE-PREG CARBON</span>
+          <span class="mini-pill">&lt;200MS SHIFT</span>
         </div>
       </div>
     </section>
@@ -244,53 +172,20 @@
       <div class="detail-tag-box right-align">
         <div class="tag-header">
           <span class="tag-pulse-dot"></span>
-          <span class="tag-code">DETAIL TAG // 03</span>
-          <span class="tag-category">DUCATI PERFORMANCE</span>
+          <span class="tag-code">03 // EXHAUST</span>
         </div>
         
         <h2 class="tag-main-title">
-          TERMIGNONI TITANIUM EXHAUST
+          TITANIUM RACING EXHAUST
         </h2>
         <p class="tag-subtitle">
-          Ducati Panigale V4 MotoGP-Derived Racing Exhaust
+          Panigale V4 MotoGP Racing System
         </p>
 
-        <div class="detail-specs-list">
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">CONSTRUCTION</span>
-              <span class="spec-val">Full Grade 1 Aerospace Titanium Piping</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">SILENCER CANISTER</span>
-              <span class="spec-val">Hand-Laid Carbon Fiber Endcap & Sleeve</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">WEIGHT SAVINGS</span>
-              <span class="spec-val">-6.0 kg Reduction vs OEM Stock System</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">POWER ELEVATION</span>
-              <span class="spec-val">+12.5 HP Gain @ 13,000 RPM (226 HP Total)</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">ACOUSTIC NOTE</span>
-              <span class="spec-val">105 dB Desmodromic V4 Throaty Racing Roar</span>
-            </div>
-          </div>
+        <div class="minimal-spec-pills">
+          <span class="mini-pill">FULL TITANIUM</span>
+          <span class="mini-pill">-6.0 KG WEIGHT</span>
+          <span class="mini-pill">+12.5 HP</span>
         </div>
       </div>
     </section>
@@ -300,58 +195,31 @@
       <div class="detail-tag-box center-align">
         <div class="tag-header">
           <span class="tag-pulse-dot"></span>
-          <span class="tag-code">DETAIL TAG // 04</span>
-          <span class="tag-category">MOTOR VALLEY ICONS</span>
+          <span class="tag-code">04 // DUAL ICONS</span>
         </div>
         
         <h2 class="tag-main-title grand-title">
           TWO ICONS. ONE SOUL.
         </h2>
         <p class="tag-subtitle wide-sub">
-          Ferrari SF90 Stradale & Ducati Panigale V4 Side-by-Side
+          Ferrari SF90 Stradale & Ducati Panigale V4
         </p>
 
-        <div class="detail-specs-list horizontal-specs">
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">FERRARI SF90</span>
-              <span class="spec-val">1,000 CV // 4.0L Twin-Turbo Hybrid V8</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">DUCATI PANIGALE</span>
-              <span class="spec-val">214 HP // 1,103cc Desmosedici V4</span>
-            </div>
-          </div>
-          <div class="spec-tag-item">
-            <span class="spec-tag-bullet"></span>
-            <div class="spec-tag-info">
-              <span class="spec-prop">ORIGIN</span>
-              <span class="spec-val">Maranello × Borgo Panigale, Italy</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="cta-actions">
-          <button class="cta-btn primary-cta" onclick="alert('Spec customizer initiated!')">
-            <span>EXPLORE FULL SPEC SHEET</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
+        <div class="minimal-spec-pills center-pills">
+          <span class="mini-pill">1,000 CV HYBRID V8</span>
+          <span class="mini-pill">214 HP DESMOSEDICI V4</span>
+          <span class="mini-pill">MOTOR VALLEY</span>
         </div>
       </div>
     </section>
 
   </main>
 
-    <!-- CONTINUITY CONNECTOR: Seamless transition from 3D Story to Services & Accessories -->
+    <!-- CONTINUITY CONNECTOR -->
     <div id="services-atelier" class="continuity-divider">
       <div class="continuity-line"></div>
       <div class="continuity-badge">
-        <span class="pulse-icon">⚡</span>
-        <span>SUPERCAR ATELIER // SERVICES & ACCESSORIES</span>
+        <span>ATELIER // BESPOKE COMPONENTS</span>
       </div>
       <div class="continuity-line"></div>
     </div>
@@ -363,21 +231,20 @@
     <section class="services-hero">
       <div class="hero-tag">
         <span class="tag-pulse-dot"></span>
-        <span>GENUINE SUPERCAR COMPONENTS // MARANELLO × SANT'AGATA × MOLSHEIM</span>
+        <span>ATELIER SPECIFICATIONS</span>
       </div>
       <h1 class="services-title">
-        AUTHENTIC SUPERCAR ACCESSORIES<br>
-        <span class="text-gradient">& PERFORMANCE ATELIER</span>
+        SUPERCAR ATELIER<br>
+        <span class="text-gradient">PERFORMANCE COMPONENTS</span>
       </h1>
       <p class="services-desc">
-        Original factory equipment and precision motorsport components for <strong>Ferrari, Lamborghini, and Bugatti</strong>. Explore authentic forged alloy wheels with 5 bespoke finish switchers and wind-tunnel certified active carbon rear spoilers with tap-to-inspect technical data.
+        Factory-engineered performance components for Ferrari, Lamborghini, and Bugatti.
       </p>
 
       <div class="brand-filters-wrap">
-        <span class="filter-label">FILTER BY SUPERCAR MARQUE:</span>
         <div class="brand-pills-list">
           <button class="brand-pill active" data-brand="all">
-            <span>ALL ORIGINAL PRODUCTS</span>
+            <span>ALL</span>
             <span class="pill-count">12</span>
           </button>
           <button class="brand-pill ferrari-pill" data-brand="ferrari">
@@ -406,11 +273,11 @@
           <div class="section-kicker">
             <span class="kicker-num">01</span>
             <span class="kicker-line"></span>
-            <span class="kicker-text">RUNNING GEAR // ORIGINAL FORGED BILLET MONOBLOCKS</span>
+            <span class="kicker-text">WHEELS</span>
           </div>
-          <h2 class="section-heading">AUTHENTIC FORGED ALLOY WHEELS</h2>
+          <h2 class="section-heading">FORGED ALLOY WHEELS</h2>
           <p class="section-subtext">
-            Original factory forged wheels engineered for Ferrari, Lamborghini, and Bugatti. Select each wheel to change finishes between Liquid Silver, 24K Gold, Rose Gold, Obsidian Black, and Mirror Chrome or click to inspect full specifications.
+            Monoblock forged aerospace-grade alloys with bespoke finishes.
           </p>
         </div>
 
@@ -441,7 +308,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Ferrari SF90 Stradale 20" Forged Diamond-Cut</h3>
-        <p class="accessory-desc">Official Ferrari Maranello forged lightweight alloy wheel. Precision milled from 6061-T6 aluminum with Scuderia Giallo Modena center cap and Brembo CCM brake clearance.</p>
+        <p class="accessory-desc">Monoblock 6061-T6 forged aluminum with Brembo CCM clearance.</p>
 
         <div class="color-picker-wrap">
           <span class="picker-label">FINISH:</span>
@@ -501,7 +368,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Lamborghini Revuelto Hex-Forged Centerlock</h3>
-        <p class="accessory-desc">Original Sant'Agata Bolognese factory forged alloy wheel in 24K Champagne Gold. Features sharp hexagonal spoke geometry and racing centerlock spindle mount.</p>
+        <p class="accessory-desc">Hexagonal forged geometry with racing centerlock mount.</p>
 
         <div class="color-picker-wrap">
           <span class="picker-label">FINISH:</span>
@@ -561,7 +428,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Bugatti Chiron Pur Sport W16 Turbine Aero</h3>
-        <p class="accessory-desc">Original Molsheim factory magnesium-alloy turbine wheel in Obsidian Satin Black. Engineered for 450+ km/h aerodynamic cooling and French Racing Blue brake clearance.</p>
+        <p class="accessory-desc">Magnesium-alloy directional turbine engineered for 450+ km/h.</p>
 
         <div class="color-picker-wrap">
           <span class="picker-label">FINISH:</span>
@@ -621,7 +488,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Ferrari Daytona SP3 Apex Centerlock</h3>
-        <p class="accessory-desc">Official Ferrari Icona series centerlock track forged wheel in Bespoke Copper Rose Gold. Direct motorsport spindle with reduced gyroscopic rotational inertia.</p>
+        <p class="accessory-desc">Icona motorsport spindle forged wheel with low rotational inertia.</p>
 
         <div class="color-picker-wrap">
           <span class="picker-label">FINISH:</span>
@@ -681,7 +548,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Lamborghini Aventador SVJ Mirror Chrome Forged</h3>
-        <p class="accessory-desc">Authentic Lamborghini forged directional alloy wheel with triple-plated Mirror PVD Chrome finish. Milled weight-relief pockets and Brembo Carbon-Ceramic caliper fitment.</p>
+        <p class="accessory-desc">Lightweight directional forged alloy with pocket-milled spokes.</p>
 
         <div class="color-picker-wrap">
           <span class="picker-label">FINISH:</span>
@@ -741,7 +608,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Ferrari SF90 Showroom Wheel Assembly</h3>
-        <p class="accessory-desc">Direct camera inspection shot of the authentic 20" Forged Diamond-Cut wheel mounted on the Ferrari SF90 Stradale in the Maranello showroom with carbon brake assembly.</p>
+        <p class="accessory-desc">Factory mounted assembly on Ferrari SF90 Stradale.</p>
 
         <div class="color-picker-wrap">
           <span class="picker-label">FINISH:</span>
@@ -797,11 +664,11 @@
           <div class="section-kicker">
             <span class="kicker-num">02</span>
             <span class="kicker-line"></span>
-            <span class="kicker-text">AERODYNAMICS // ORIGINAL PRE-PREG CARBON FIBER SPOILERS</span>
+            <span class="kicker-text">AERODYNAMICS</span>
           </div>
-          <h2 class="section-heading">AUTHENTIC ACTIVE REAR SPOILERS & WINGS</h2>
+          <h2 class="section-heading">ACTIVE REAR SPOILERS</h2>
           <p class="section-subtext">
-            Authentic aerodynamic components and active wings for Ferrari, Lamborghini, and Bugatti. Tap any spoiler below to inspect downforce numbers, hydraulic actuation times, carbon weave structure, and compatibility.
+            Autoclaved pre-preg carbon aerodynamic systems and active wings.
           </p>
         </div>
       </div>
@@ -821,7 +688,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Ferrari SF90 Active Shut-Off Gurney Carbon Wing</h3>
-        <p class="accessory-desc">Original Ferrari Maranello pre-preg dry carbon active rear wing. Electro-actuated shut-off flap shifts under 200ms between Low Drag (LD) and High Downforce (HD) modes.</p>
+        <p class="accessory-desc">Pre-preg carbon active wing with sub-200ms electro-actuated shut-off flap.</p>
 
         <div class="card-specs-row">
           
@@ -870,7 +737,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Lamborghini Huracán STO Swan-Neck Carbon GT Wing</h3>
-        <p class="accessory-desc">Official Lamborghini Squadra Corse carbon fiber GT wing with billet aluminum swan-neck pylons. High-downforce airfoil generating 550kg of cornering downforce.</p>
+        <p class="accessory-desc">Squadra Corse carbon airfoil with billet aluminum swan-neck pylons.</p>
 
         <div class="card-specs-row">
           
@@ -919,7 +786,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Bugatti Chiron Super Sport Hydraulic Airbrake Wing</h3>
-        <p class="accessory-desc">Authentic Bugatti Molsheim carbon fiber active hydraulic rear wing. Dual telescopic pistons deploy up to a 49-degree airbrake posture with 750kg stopping downforce.</p>
+        <p class="accessory-desc">Dual hydraulic telescopic wing with 49° airbrake deployment.</p>
 
         <div class="card-specs-row">
           
@@ -968,7 +835,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Ferrari 812 Competizione Carbon Rear Spoiler</h3>
-        <p class="accessory-desc">Official Maranello OEM carbon fiber trunk spoiler plinth assembly. High-kick aerodynamic rear blade that optimizes high-speed rear axle vortex distribution.</p>
+        <p class="accessory-desc">High-kick carbon trunk plinth engineered for rear axle vortex flow.</p>
 
         <div class="card-specs-row">
           
@@ -1017,7 +884,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Lamborghini Aventador SVJ ALA 2.0 Forged Carbon Wing</h3>
-        <p class="accessory-desc">Official Sant'Agata Bolognese factory ALA 2.0 active forged carbon fiber rear wing. Internal micro-flap vectoring channels air to the left or right side in cornering.</p>
+        <p class="accessory-desc">ALA 2.0 active forged carbon wing with dynamic aero-vectoring.</p>
 
         <div class="card-specs-row">
           
@@ -1066,7 +933,7 @@
 
       <div class="card-content">
         <h3 class="accessory-title">Ferrari SF90 Showroom Active Aero Wing Assembly</h3>
-        <p class="accessory-desc">Direct camera inspection shot of the authentic Ferrari SF90 carbon active rear wing mounted on the vehicle in the Maranello showroom, showing the aerodynamic integration.</p>
+        <p class="accessory-desc">Integrated active aero assembly mounted on Ferrari SF90 Stradale.</p>
 
         <div class="card-specs-row">
           
@@ -1112,11 +979,11 @@
           <div class="section-kicker">
             <span class="kicker-num">03</span>
             <span class="kicker-line"></span>
-            <span class="kicker-text">ACOUSTICS & PERFORMANCE // SUPERBIKE RACING EXHAUST SYSTEMS</span>
+            <span class="kicker-text">EXHAUST SYSTEMS</span>
           </div>
-          <h2 class="section-heading">AUTHENTIC SUPERBIKE RACING EXHAUSTS</h2>
+          <h2 class="section-heading">SUPERBIKE RACING EXHAUSTS</h2>
           <p class="section-subtext">
-            Precision handcrafted titanium racing exhaust systems engineered for track-level performance. Each superbike features a distinct acoustic signature and dedicated race-tuned configuration.
+            Handcrafted titanium racing exhaust systems.
           </p>
         </div>
       </div>
@@ -1174,11 +1041,11 @@
                 <span class="eq-bar"></span>
                 <span class="eq-bar"></span>
               </div>
-              <span>108 dB Track Spec // Full Titanium</span>
+              <span>108 dB Track Spec · Full Titanium</span>
             </div>
 
             <h3 class="accessory-title">Ducati Panigale V4 Akrapovič Full Titanium Racing Exhaust</h3>
-            <p class="accessory-desc">Official Ducati Corse racing exhaust manufactured by Akrapovič. Dual low-mount slash-cut silencers engineered exclusively for the Desmosedici Stradale V4 engine with dedicated racing ECU map.</p>
+            <p class="accessory-desc">Full titanium low-mount system with dedicated Desmosedici V4 race map.</p>
 
             <div class="card-specs-row">
               <div class="spec-mini">
@@ -1241,11 +1108,11 @@
                 <span class="eq-bar"></span>
                 <span class="eq-bar"></span>
               </div>
-              <span>Hexagonal Carbon // Aerospace Titanium</span>
+              <span>Hexagonal Carbon · Aerospace Titanium</span>
             </div>
 
             <h3 class="accessory-title">BMW M 1000 RR Akrapovič M-Performance Titanium Hex Exhaust</h3>
-            <p class="accessory-desc">Official BMW Motorrad M-Performance titanium exhaust system. Features hydroformed conical collectors, hexagonal carbon end-cap, and laser-etched BMW M logo.</p>
+            <p class="accessory-desc">M-Performance titanium system with hexagonal carbon end-cap.</p>
 
             <div class="card-specs-row">
               <div class="spec-mini">
@@ -1308,11 +1175,11 @@
                 <span class="eq-bar"></span>
                 <span class="eq-bar"></span>
               </div>
-              <span>112 dB Supercharged Scream // Hand-TIG Titanium</span>
+              <span>112 dB · Hand-TIG Titanium</span>
             </div>
 
             <h3 class="accessory-title">Kawasaki Ninja H2 Supercharged Megaphone Flame Exhaust</h3>
-            <p class="accessory-desc">Ultra-lightweight slash-cut megaphone racing exhaust for the supercharged Kawasaki Ninja H2. Unlocks the unfiltered supercharger turbine flutter and high-flow flame expulsion.</p>
+            <p class="accessory-desc">Hand-TIG titanium slash-cut megaphone for supercharged 998cc.</p>
 
             <div class="card-specs-row">
               <div class="spec-mini">
@@ -1351,13 +1218,13 @@
       <div class="inquiry-box">
         <div class="tag-header">
           <span class="tag-pulse-dot"></span>
-          <span class="tag-code">VIP ATELIER CONCIERGE</span>
-          <span class="tag-category">ORIGINAL PARTS FITMENT</span>
+          <span class="tag-code">CONCIERGE</span>
+          <span class="tag-category">FITMENT</span>
         </div>
         
-        <h2 class="inquiry-title">REQUEST ORIGINAL PARTS FITMENT & QUOTE</h2>
+        <h2 class="inquiry-title">FITMENT & INQUIRY</h2>
         <p class="inquiry-subtitle">
-          Factory-certified technicians will assist with OEM part numbers, custom powder coats, centerlock torque specifications, and certified installation.
+          Direct consultation with our atelier specialists for allocations and certified fitment.
         </p>
 
         <form id="fitment-form" class="fitment-form" onsubmit="handleFitmentSubmit(event)">
@@ -1414,7 +1281,7 @@
           </div>
 
           <button type="submit" class="submit-inquiry-btn">
-            <span>SUBMIT FITMENT INQUIRY</span>
+            <span>SUBMIT INQUIRY</span>
             <span class="btn-icon">→</span>
           </button>
         </form>
@@ -1423,12 +1290,12 @@
         <div class="whatsapp-direct-box">
           <div class="wa-direct-icon">💬</div>
           <div class="wa-direct-info">
-            <span class="wa-direct-kicker">INSTANT VIP WHATSAPP DESK</span>
-            <h4 class="wa-direct-title">Direct Fitment Consultation</h4>
-            <p class="wa-direct-sub">Connect directly with our senior automotive technician via WhatsApp for immediate stock, pricing, and global logistics.</p>
+            <span class="wa-direct-kicker">CONCIERGE</span>
+            <h4 class="wa-direct-title">WhatsApp Desk</h4>
+            <p class="wa-direct-sub">Direct allocation, pricing, and global logistics via WhatsApp.</p>
           </div>
           <a href="https://wa.me/918086648642?text=Hello%20Scuderia%20Veloce%2C%20I%20would%20like%20to%20inquire%20about%20supercar%20accessories%20and%20fitment." target="_blank" rel="noopener noreferrer" class="wa-direct-action-btn">
-            <span>MESSAGE ON WHATSAPP (8086648642)</span>
+            <span>MESSAGE WHATSAPP</span>
             <span class="wa-arrow">→</span>
           </a>
         </div>
@@ -1465,18 +1332,18 @@
 
         <div class="modal-info-col">
           <div class="modal-header">
-            <span class="modal-kicker">AUTHENTIC OEM / ATELIER SPEC SHEET</span>
+            <span class="modal-kicker">OEM SPEC SHEET</span>
             <h2 id="modal-title" class="modal-title">Item Title</h2>
             <p id="modal-desc" class="modal-desc">Detailed item description goes here.</p>
           </div>
 
           <div class="modal-specs-section">
-            <h4 class="specs-section-title">ORIGINAL FACTORY SPECIFICATIONS</h4>
+            <h4 class="specs-section-title">SPECIFICATIONS</h4>
             <div class="modal-specs-table" id="modal-specs-table"></div>
           </div>
 
           <div class="modal-fitment-section">
-            <h4 class="specs-section-title">CERTIFIED COMPATIBLE SUPERCAR MODELS</h4>
+            <h4 class="specs-section-title">COMPATIBLE MODELS</h4>
             <div class="fitment-tags-list" id="modal-fitment-list"></div>
           </div>
 
@@ -1484,11 +1351,11 @@
             <button class="modal-360-btn" id="modal-launch-360-btn" onclick="launch360FromModal()">
               <span class="pulse-360-dot"></span>
               <span class="btn-360-icon">🔄</span>
-              <span>LAUNCH 360° VEHICLE INSPECTION (CAR FITTED VIEW)</span>
+              <span>360° CAR VIEW</span>
               <span>↗</span>
             </button>
             <button class="modal-cta-btn" onclick="inquireThisItem()">
-              <span>REQUEST FITMENT QUOTE FOR THIS ORIGINAL ITEM</span>
+              <span>REQUEST FITMENT QUOTE</span>
               <span>→</span>
             </button>
           </div>
@@ -1501,14 +1368,14 @@
     <div class="footer-inner">
       <div class="footer-left">
         <span class="brand-text">SCUDERIA<span class="highlight">VELOCE</span></span>
-        <p class="footer-tagline">Maranello · Sant'Agata Bolognese · Molsheim · Dubai · Monaco</p>
+        <p class="footer-tagline">Maranello · Dubai · Monaco</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">3D Cinematic Experience</a>
-        <a href="#alloy-wheels">Original Alloy Wheels</a>
-        <a href="#spoilers">Original Spoilers</a>
-        <a href="#inquiry">VIP Concierge</a>
-        <a href="https://wa.me/918086648642?text=Hello%20Scuderia%20Veloce%2C%20I%20would%20like%20to%20inquire%20about%20supercar%20accessories." target="_blank" rel="noopener noreferrer" style="color: #25D366; font-weight: 600;">💬 WhatsApp Concierge (8086648642)</a>
+        <a href="index.html">3D Cinematic</a>
+        <a href="#alloy-wheels">Forged Wheels</a>
+        <a href="#spoilers">Active Spoilers</a>
+        <a href="#inquiry">Concierge</a>
+        <a href="https://wa.me/918086648642?text=Hello%20Scuderia%20Veloce%2C%20I%20would%20like%20to%20inquire%20about%20supercar%20accessories." target="_blank" rel="noopener noreferrer" style="color: #25D366; font-weight: 600;">💬 WhatsApp Concierge</a>
       </div>
     </div>
   </footer>

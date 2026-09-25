@@ -13,17 +13,12 @@
 </head>
 <body class="viewer-body">
 
-  <!-- Sound Notification Toast -->
-  <div id="sound-toast" class="sound-toast">
-    <span>🔊 Sound active: Turntable servo & mechanical audio enabled</span>
-  </div>
-
   <!-- Top Navigation & Vehicle Header -->
   <header class="viewer-top-nav">
     <div class="nav-left">
       <a href="services.html" class="back-link" title="Return to Accessories Atelier">
         <span class="back-arrow">←</span>
-        <span class="back-text">BACK TO SERVICES ATELIER</span>
+        <span class="back-text">ATELIER</span>
       </a>
     </div>
 
@@ -33,19 +28,19 @@
         <span id="fitted-category-badge" class="fitted-type-badge">FITTED ALLOY WHEEL</span>
       </div>
       <h1 id="car-title" class="viewer-car-title">FERRARI SF90 STRADALE</h1>
-      <div id="car-subtitle" class="viewer-car-subtitle">Assetto Fiorano // 1000 CV V8 Hybrid — Mounted Inspection</div>
+      <div id="car-subtitle" class="viewer-car-subtitle">1,000 CV V8 Hybrid · Maranello</div>
     </div>
 
     <div class="nav-right">
       <button id="viewer-sound-btn" class="nav-btn sound-toggle" title="Toggle audio feedback">
         <span class="sound-icon">🔈</span>
-        <span class="sound-label">AUDIO FX</span>
+        <span class="sound-label">SOUND</span>
       </button>
       <button id="viewer-video-btn" class="nav-btn highlight-btn" style="display: none; background: rgba(224, 0, 0, 0.85); border-color: #ff3333;" title="Watch authentic 4K on-track video">
-        <span>🎬 4K VIDEO</span>
+        <span>4K VIDEO</span>
       </button>
       <button id="viewer-inquire-btn" class="nav-btn highlight-btn">
-        <span>BOOK FITMENT</span>
+        <span>FITMENT</span>
       </button>
     </div>
   </header>
@@ -99,7 +94,7 @@
       <!-- Expandable Engineering Callout HUD -->
       <div class="hotspot-popup-card" id="hotspot-popup">
         <div class="popup-header">
-          <span class="popup-kicker">FITTED COMPONENT TELEMETRY</span>
+          <span class="popup-kicker">OEM TELEMETRY</span>
           <h3 id="popup-title" class="popup-title">Ferrari SF90 20" Forged Diamond-Cut</h3>
           <span id="popup-part-no" class="popup-part-no">OEM #342891-CORSA</span>
         </div>
@@ -107,8 +102,8 @@
           <!-- Populated by viewer.js -->
         </div>
         <div class="popup-footer">
-          <span class="popup-verified-tag">✓ VERIFIED OEM COMPATIBILITY</span>
-          <button class="popup-action-btn" id="popup-view-spec-btn">FULL SPECS →</button>
+          <span class="popup-verified-tag">✓ OEM FITMENT</span>
+          <button class="popup-action-btn" id="popup-view-spec-btn">SPECS →</button>
         </div>
       </div>
     </div>
@@ -120,16 +115,15 @@
         <span class="drag-hand">🔄</span>
         <span class="drag-arrow right">›</span>
       </div>
-      <span class="drag-hint-text">360° SHOWROOM TURNTABLE // AUTOROTATING</span>
-      <span class="drag-hint-sub">DRAG OR SWIPE ANYTIME TO PAUSE & INSPECT SPECIFIC ANGLE</span>
+      <span class="drag-hint-text">DRAG TO ROTATE 360°</span>
     </div>
 
     <!-- Loading Sequence HUD -->
     <div class="viewer-loader-hud" id="viewer-loader">
       <div class="loader-spinner"></div>
       <div class="loader-text-group">
-        <span class="loader-title">CALIBRATING 360° STUDIO TURNTABLE</span>
-        <span class="loader-progress-val" id="loader-progress">SYNCHRONIZING FRAMES (0%)</span>
+        <span class="loader-title">INITIALIZING STUDIO</span>
+        <span class="loader-progress-val" id="loader-progress">LOADING (0%)</span>
       </div>
     </div>
 
@@ -195,13 +189,13 @@
         <img src="" id="fitted-thumb-img" class="fitted-thumb-img" alt="Component Thumbnail">
       </div>
       <div class="fitted-details-wrap">
-        <span class="fitted-kicker" id="fitted-item-kicker">AUTHENTIC FITTED ITEM</span>
+        <span class="fitted-kicker" id="fitted-item-kicker">OEM FITTED</span>
         <h4 class="fitted-card-title" id="fitted-card-title">Ferrari SF90 20" Diamond-Cut</h4>
         <div class="fitted-specs-mini" id="fitted-specs-mini">
           <!-- Populated by JS -->
         </div>
         <button class="fitted-quote-btn" id="fitted-quote-btn">
-          <span>REQUEST FITMENT QUOTE</span>
+          <span>FITMENT INQUIRY</span>
           <span class="arrow-ico">→</span>
         </button>
       </div>
@@ -219,17 +213,17 @@
       <div class="controls-btn-group">
         <button id="btn-reset-angle" class="studio-btn" title="Reset angle to default inspection view">
           <span class="btn-icon">⟲</span>
-          <span class="btn-text">RESET VIEW</span>
+          <span class="btn-text">RESET</span>
         </button>
 
         <button id="btn-autospin" class="studio-btn" title="Toggle continuous 360 auto turntable spin">
           <span class="btn-icon" id="autospin-icon">▶</span>
-          <span class="btn-text" id="autospin-text">AUTO-ROTATE 360°</span>
+          <span class="btn-text" id="autospin-text">AUTO-ROTATE</span>
         </button>
 
         <button id="btn-zoom" class="studio-btn" title="Toggle close-up fitment zoom">
           <span class="btn-icon">🔍</span>
-          <span class="btn-text" id="zoom-text">ZOOM FITMENT</span>
+          <span class="btn-text" id="zoom-text">ZOOM</span>
         </button>
 
         <button id="btn-hotspot-toggle" class="studio-btn active" title="Toggle technical spec hotspots">
@@ -239,7 +233,7 @@
 
         <button id="btn-switch-tray" class="studio-btn" title="Compare other accessories on this car">
           <span class="btn-icon">⚡</span>
-          <span class="btn-text">SWITCH ACCESSORY</span>
+          <span class="btn-text">ACCESSORIES</span>
         </button>
       </div>
     </div>
@@ -248,8 +242,8 @@
     <div class="quick-switcher-tray" id="quick-switcher-tray">
       <div class="tray-header">
         <div class="tray-title-group">
-          <span class="tray-kicker">SUPERCAR ATELIER CATALOG</span>
-          <h4 class="tray-title">INSPECT OTHER ACCESSORIES ON THIS VEHICLE</h4>
+          <span class="tray-kicker">COMPONENTS</span>
+          <h4 class="tray-title">FITMENT TRAY</h4>
         </div>
         <button id="close-tray-btn" class="tray-close-btn" title="Close Tray">✕</button>
       </div>
@@ -271,15 +265,15 @@
           </div>
         </div>
         <div class="modal-info-col">
-          <span class="modal-kicker" id="spec-modal-kicker">FACTORY OEM DATA SHEET</span>
+          <span class="modal-kicker" id="spec-modal-kicker">SPEC SHEET</span>
           <h2 class="modal-title" id="spec-modal-title">Item Title</h2>
           <p class="modal-desc" id="spec-modal-desc">Description</p>
           <div class="modal-specs-section">
-            <h4 class="specs-section-title">ENGINEERING SPECIFICATIONS</h4>
+            <h4 class="specs-section-title">SPECIFICATIONS</h4>
             <div class="modal-specs-table" id="spec-modal-table"></div>
           </div>
           <div class="modal-fitment-section">
-            <h4 class="specs-section-title">CERTIFIED COMPATIBLE MODELS</h4>
+            <h4 class="specs-section-title">COMPATIBLE MODELS</h4>
             <div class="fitment-tags-list" id="spec-modal-fitment"></div>
           </div>
         </div>
@@ -324,7 +318,7 @@
 
         <div class="cinema-action-buttons">
           <a class="cinema-inquire-btn" id="cinema-whatsapp-btn" href="https://wa.me/918086648642?text=Hello%20Scuderia%20Veloce%2C%20I%20am%20interested%20in%20the%20Ducati%20Panigale%20racing%20exhaust" target="_blank" rel="noopener noreferrer">
-            <span>💬 INQUIRE ON WHATSAPP</span>
+            <span>WHATSAPP INQUIRY</span>
           </a>
         </div>
       </div>

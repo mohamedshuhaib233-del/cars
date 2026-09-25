@@ -739,6 +739,40 @@ html, body {
   text-align: left;
 }
 
+/* Minimal Luxury Spec Pills for Hero Story Blocks */
+.minimal-spec-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.minimal-spec-pills.center-pills {
+  justify-content: center;
+}
+
+.mini-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.32rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  color: #e2e8f0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.mini-pill:hover {
+  background: rgba(255, 40, 0, 0.15);
+  border-color: rgba(255, 40, 0, 0.4);
+  color: #ffffff;
+}
+
 /* Call to Actions (Chapter 4) */
 .cta-actions {
   display: flex;
@@ -934,29 +968,9 @@ kbd {
   font-size: 0.62rem;
 }
 
-/* Sound Toast */
+/* Sound Toast - Hidden for clean luxury standard */
 .sound-toast {
-  position: fixed;
-  top: calc(var(--nav-height) + 1.2rem);
-  left: 50%;
-  transform: translateX(-50%) translateY(-20px);
-  background: rgba(16, 18, 24, 0.9);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-red-glow);
-  padding: 0.5rem 1.1rem;
-  border-radius: 100px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: #ff9980;
-  z-index: 200;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.sound-toast.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -1118,11 +1132,7 @@ kbd {
 }
 
 .filter-label {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--text-dim);
+  display: none !important;
 }
 
 .brand-pills-list {
@@ -1258,43 +1268,10 @@ kbd {
   line-height: 1.5;
 }
 
-/* Finishes Legend */
+/* Finishes Legend - Hidden for clean minimalist look */
 .finishes-legend {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: flex-end;
+  display: none !important;
 }
-
-.legend-title {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--text-dim);
-}
-
-.legend-dots {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-}
-
-.color-chip-tag {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  font-weight: 700;
-  padding: 0.2rem 0.55rem;
-  border-radius: 4px;
-  letter-spacing: 0.06em;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.color-chip-tag.silver { color: #d0d5dd; border-color: #b0b8c4; }
-.color-chip-tag.gold { color: #ffd700; border-color: #ffd700; }
-.color-chip-tag.rose-gold { color: #e8a598; border-color: #c47c70; }
-.color-chip-tag.black { color: #8a8f9d; border-color: #404452; }
-.color-chip-tag.chrome { color: #ffffff; border-color: #ffffff; }
 
 /* Accessories Grid */
 .accessories-grid {
